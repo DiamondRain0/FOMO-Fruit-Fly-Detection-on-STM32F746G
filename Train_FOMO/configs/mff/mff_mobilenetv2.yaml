@@ -1,0 +1,34 @@
+OUTPUT_DIR: 'output'
+LOG_DIR: 'log'
+WORKERS: 4
+
+DATASET:
+  NAME: 'mff'
+  ROOT: 'dataset'
+  VALIDATION_SET: 'test'  # Make sure you have a 'test' folder or change to 'train'
+  TRAIN_SET: 'train'
+  NUM_CLASSES: 2          # 0=Background, 1=FruitFly
+  # ImageNet weights crash on 96x96, so we train from scratch
+  URL: ''
+  IMAGE_SIZE:
+  - 96
+  - 96
+
+MODEL:
+  BACKBONE: 'MobilenetV2'
+  PRETRAINED: null        # Important: Set to null/None for 96x96 custom training
+
+TRAIN:
+  AUGMENT: true
+  NUM_EPOCHS: 200         # Increased for better convergence
+  RESUME: false
+  OPTIMIZER: 'adam'
+  LR: 0.001       # Lower LR slightly if it's 0.005
+  WD: 0.01        # INCREASE THIS (Default was 0.0005). 0.01 fights overfitting.
+  MOMENTUM: 0.9
+  NESTEROV: false
+  # Weights: Background=1.0, Fly=100.0 (The "Deadly" Trick)
+  CLASS_WEIGHTS:
+  - 1.0
+  - 15.0
+  BEST_SAVE_PATH: 'best.keras'
