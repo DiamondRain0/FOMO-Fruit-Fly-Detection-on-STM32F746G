@@ -107,7 +107,7 @@ cpackget add tensorflow::tensorflow-lite-micro
 9. Copy the contents of the `MCU_FOMO/` folder and paste it under this project.
 10. Some files can flash red but its mostly ok.
 11. Select CMSIS in left panel again.
-12. First click built solution (hammer), if it shows no error thats it everything is ok. (If an error showns up good luck with it :,D ) (if you made changes you may need to do this images steps:  <img width="336" height="281" alt="Ekran görüntüsü 2026-03-12 193722" src="https://github.com/user-attachments/assets/e6479a4c-a43a-46e6-9789-7a3d479f8df4" />  )
+12. First click built solution (hammer), if it shows no error thats it everything is ok. (If an error showns up good luck with it :,D ) (if you made changes on the mcu files you may need to do this images steps:  <img width="336" height="281" alt="Ekran görüntüsü 2026-03-12 193722" src="https://github.com/user-attachments/assets/e6479a4c-a43a-46e6-9789-7a3d479f8df4" />  )
 13. Then if the mcu is connected load&run (play arrow).
 14. Aaand its done! Now you can test it using the `MCU_FOMO/FOMO_test.py` (you may need to move it to a better place for testing, also may need to change the dataset loading paths).
 15. Run the test file and press the mcus reset button every time you see ready from mcu.
