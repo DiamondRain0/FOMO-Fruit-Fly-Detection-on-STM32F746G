@@ -96,10 +96,13 @@ Install the VS Code extension:
 
 6. Rename the project for your liking (FOMO_Fruitflt recommended :D ) select an folder to create under.
 7. Click Create.
-8. Open a terminal on VS code, and run these lines:
+8. Open a terminal on VS code, and run these lines (they download the neccesary libraries we used in this project, only run these once else it gets messy - based on experience :,D):
 ```
-cpackget add ARM: :CMSIS-DSP
-cpackget add tensorflow: :tensorflow-lite-micro
+cpackget add ARM::CMSIS-DSP
+```
+
+```
+cpackget add tensorflow::tensorflow-lite-micro
 ```
 9. Copy the contents of the `MCU_FOMO/` folder and paste it under this project.
 10. Some files can flash red but its mostly ok.
